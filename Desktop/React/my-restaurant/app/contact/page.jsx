@@ -1,8 +1,6 @@
 // app/pages/ContactPage.jsx
 'use client'
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import CTASection from '../components/CTASection';
 import ContactForm from '../components/ContactForm';
@@ -102,8 +100,6 @@ const ContactPage = () => {
         <meta name="description" content={metadata.description} />
         <meta property="og:image" content={metadata.img} />
       </div>
-
-      <Header />
 
       {/* Hero Section */}
       <HeroSection
@@ -279,7 +275,6 @@ const ContactPage = () => {
         backgroundColor="bg-green-600"
       />
 
-      <Footer />
     </div>
   );
 };

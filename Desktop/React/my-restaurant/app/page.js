@@ -1,7 +1,5 @@
 // app/page.js
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import CTASection from "./components/CTASection";
 import MenuCard from "./components/MenuCard";
@@ -59,7 +57,6 @@ const home = () => {
 
   return (
     <div className="min-h-screen">
-      <Header />
       {/* Metadata for SEO */}
       <div style={{ display: "none" }}>
         <meta name="title" content={metadata.title} />

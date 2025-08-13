@@ -1,8 +1,6 @@
 // app/pages/MenuPage.jsx
 'use client'
 import React, { useState } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import CTASection from '../components/CTASection';
 import MenuCard from '../components/MenuCard';
@@ -51,6 +49,7 @@ const MenuPage = () => {
   const menuItems = [
     // Fast Food Items
     {
+      id: 1, // ✅ Added ID
       name: "Veggie Supreme Burger",
       description: "Grilled patty made from fresh vegetables, quinoa, and herbs with crispy lettuce, tomatoes, and special sauce",
       price: 299,
@@ -59,6 +58,7 @@ const MenuPage = () => {
       isSpicy: false
     },
     {
+      id: 2, // ✅ Added ID
       name: "Spicy Paneer Wrap",
       description: "Grilled paneer with fresh vegetables wrapped in soft tortilla with mint chutney and spicy sauce",
       price: 249,
@@ -67,6 +67,7 @@ const MenuPage = () => {
       isSpicy: true
     },
     {
+      id: 3, // ✅ Added ID
       name: "Crispy Veggie Pizza",
       description: "Wood-fired pizza with fresh vegetables, mozzarella cheese, and herbs on thin crust",
       price: 399,
@@ -75,6 +76,7 @@ const MenuPage = () => {
       isSpicy: false
     },
     {
+      id: 4, // ✅ Added ID
       name: "Masala Fries",
       description: "Golden crispy fries tossed with special Indian spices and served with tangy sauce",
       price: 149,
@@ -83,6 +85,7 @@ const MenuPage = () => {
       isSpicy: true
     },
     {
+      id: 5, // ✅ Added ID
       name: "Veggie Club Sandwich",
       description: "Triple layer sandwich with grilled vegetables, cheese, and fresh herbs",
       price: 229,
@@ -93,6 +96,7 @@ const MenuPage = () => {
 
     // Full Meals
     {
+      id: 6, // ✅ Added ID
       name: "Royal Thali",
       description: "Complete traditional meal with dal, sabzi, rice, roti, raita, pickle, papad, and sweet",
       price: 399,
@@ -101,6 +105,7 @@ const MenuPage = () => {
       isSpicy: false
     },
     {
+      id: 7, // ✅ Added ID
       name: "Punjabi Thali",
       description: "Authentic Punjabi meal with rajma, aloo gobi, rice, naan, lassi, and gulab jamun",
       price: 449,
@@ -109,6 +114,7 @@ const MenuPage = () => {
       isSpicy: true
     },
     {
+      id: 8, // ✅ Added ID
       name: "South Indian Combo",
       description: "Crispy dosa with sambar, coconut chutney, rice, rasam, and filter coffee",
       price: 349,
@@ -117,6 +123,7 @@ const MenuPage = () => {
       isSpicy: true
     },
     {
+      id: 9, // ✅ Added ID
       name: "Special Biryani Meal",
       description: "Fragrant vegetable biryani with raita, shorba, and roasted papad",
       price: 379,
@@ -127,6 +134,7 @@ const MenuPage = () => {
 
     // Snacks
     {
+      id: 10, // ✅ Added ID
       name: "Samosa Chaat",
       description: "Crispy samosas topped with yogurt, chutneys, and fresh herbs",
       price: 129,
@@ -135,6 +143,7 @@ const MenuPage = () => {
       isSpicy: true
     },
     {
+      id: 11, // ✅ Added ID
       name: "Paneer Tikka",
       description: "Grilled cottage cheese cubes marinated in spices and herbs",
       price: 199,
@@ -143,6 +152,7 @@ const MenuPage = () => {
       isSpicy: true
     },
     {
+      id: 12, // ✅ Added ID
       name: "Veg Spring Rolls",
       description: "Crispy rolls filled with fresh vegetables served with sweet chili sauce",
       price: 159,
@@ -151,6 +161,7 @@ const MenuPage = () => {
       isSpicy: false
     },
     {
+      id: 13, // ✅ Added ID
       name: "Aloo Tikki Burger",
       description: "Spiced potato patty with onions, tomatoes, and mint chutney",
       price: 179,
@@ -161,6 +172,7 @@ const MenuPage = () => {
 
     // Beverages
     {
+      id: 14, // ✅ Added ID
       name: "Fresh Lime Water",
       description: "Refreshing lime juice with mint and black salt",
       price: 89,
@@ -169,6 +181,7 @@ const MenuPage = () => {
       isSpicy: false
     },
     {
+      id: 15, // ✅ Added ID
       name: "Mango Lassi",
       description: "Creamy yogurt drink blended with fresh mango pulp",
       price: 119,
@@ -177,6 +190,7 @@ const MenuPage = () => {
       isSpicy: false
     },
     {
+      id: 16, // ✅ Added ID
       name: "Masala Chai",
       description: "Traditional Indian spiced tea brewed with aromatic spices",
       price: 49,
@@ -185,6 +199,7 @@ const MenuPage = () => {
       isSpicy: true
     },
     {
+      id: 17, // ✅ Added ID
       name: "Fresh Juice",
       description: "Seasonal fresh fruit juices - orange, apple, or mixed fruit",
       price: 99,
@@ -217,8 +232,6 @@ const MenuPage = () => {
         <meta property="og:image" content={metadata.img} />
       </div>
 
-      <Header />
-
       {/* Hero Section */}
       <HeroSection
         title="Our Delicious Menu"
@@ -247,8 +260,8 @@ const MenuPage = () => {
 
           {/* Menu Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredItems.map((item, index) => (
-              <MenuCard key={index} item={item} />
+            {filteredItems.map((item) => (
+              <MenuCard key={item.id} item={item} />
             ))}
           </div>
 
@@ -302,8 +315,6 @@ const MenuPage = () => {
         }}
         backgroundColor="bg-green-600"
       />
-
-      <Footer />
     </div>
   );
 };
