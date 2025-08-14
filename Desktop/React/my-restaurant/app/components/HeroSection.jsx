@@ -5,11 +5,13 @@ const HeroSection = ({ title, subtitle, backgroundImage, buttons, height = "h-sc
   return (
     <section className={`relative ${height} flex items-center justify-center text-white`}>
       {/* Background Image */}
-      <div className="absolute inset-0 bg-black bg-opacity-50">
+      <div className="absolute inset-0">
         <div 
           className="w-full h-full bg-cover bg-center"
           style={{ 
-            backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'linear-gradient(135deg, #16a34a 0%, #15803d 100%)'
+            backgroundImage: backgroundImage 
+              ? `url(${backgroundImage})` 
+              : 'linear-gradient(135deg, #16a34a 0%, #15803d 100%)'
           }}
         />
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
@@ -21,15 +23,14 @@ const HeroSection = ({ title, subtitle, backgroundImage, buttons, height = "h-sc
           {title}
         </h1>
         {subtitle && (
-          <p className="text-xl md:text-2xl mb-8 text-gray-200">
-            {subtitle}
-          </p>
+          <p className="text-xl md:text-2xl mb-8 text-gray-200">{subtitle}</p>
         )}
         {buttons && (
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {buttons.map((button, index) => (
-              <button 
+              <button
                 key={index}
+                onClick={button.onClick}  // ✅ bind click handler
                 className={`${button.primary 
                   ? 'bg-green-600 hover:bg-green-700 text-white' 
                   : 'bg-white hover:bg-gray-100 text-green-600'
@@ -43,10 +44,6 @@ const HeroSection = ({ title, subtitle, backgroundImage, buttons, height = "h-sc
         )}
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <i className="fas fa-chevron-down text-white text-2xl"></i>
-      </div>
     </section>
   );
 };

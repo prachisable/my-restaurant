@@ -15,13 +15,19 @@ const CTASection = ({ title, subtitle, primaryButton, secondaryButton, backgroun
         )}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           {primaryButton && (
-            <button className="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors min-w-48">
+            <button
+              onClick={primaryButton.onClick} // ✅ bind click handler
+              className="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors min-w-48"
+            >
               <i className={`${primaryButton.icon} mr-2`}></i>
               {primaryButton.text}
             </button>
           )}
           {secondaryButton && (
-            <button className="border-2 border-white text-white hover:bg-white hover:text-green-600 px-8 py-3 rounded-lg font-semibold transition-colors min-w-48">
+            <button
+              onClick={secondaryButton.onClick} // ✅ bind click handler
+              className="border-2 border-white text-white hover:bg-white hover:text-green-600 px-8 py-3 rounded-lg font-semibold transition-colors min-w-48"
+            >
               <i className={`${secondaryButton.icon} mr-2`}></i>
               {secondaryButton.text}
             </button>
